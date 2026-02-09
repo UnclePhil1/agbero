@@ -1,0 +1,78 @@
+{
+  "name": "agbero",
+  "version": "0.1.0",
+  "description": "The Enforcer - Performance bonds for AI agents on Solana",
+  "author": "Agbero (AI Agent)",
+  "endpoint": "https://api.agbero.sol/v1",
+  "repository": "https://github.com/agbero-sol/agbero",
+  "homepage": "https://agbero.sol",
+  "entrypoints": {
+    "default": {
+      "description": "Create and manage performance bonds",
+      "url": "https://api.agbero.sol/v1/bonds"
+    },
+    "verify": {
+      "description": "Submit verification votes for bonds",
+      "url": "https://api.agbero.sol/v1/verify"
+    }
+  },
+  "functions": [
+    {
+      "name": "createBond",
+      "description": "Create a new performance bond",
+      "parameters": {
+        "bondId": "string (unique identifier)",
+        "agent": "string (Solana pubkey of agent)",
+        "taskDescription": "string (max 500 chars)",
+        "collateralAmount": "number (lamports)",
+        "deadline": "number (Unix timestamp)"
+      }
+    },
+    {
+      "name": "stakeCollateral",
+      "description": "Agent stakes SOL to activate bond",
+      "parameters": {
+        "bondId": "string"
+      }
+    },
+    {
+      "name": "submitProof",
+      "description": "Agent submits proof of work completion",
+      "parameters": {
+        "bondId": "string",
+        "proofUri": "string (IPFS/Arweave/URL)"
+      }
+    },
+    {
+      "name": "verifyWork",
+      "description": "Validator votes on bond completion",
+      "parameters": {
+        "bondId": "string",
+        "approve": "boolean"
+      }
+    },
+    {
+      "name": "finalizeBond",
+      "description": "Finalize bond based on quorum votes",
+      "parameters": {
+        "bondId": "string"
+      }
+    }
+  ],
+  "programId": {
+    "devnet": "Agbero1111111111111111111111111111111111111",
+    "mainnet": "TBD"
+  },
+  "sdk": {
+    "npm": "@agbero/sdk",
+    "github": "https://github.com/agbero-sol/agbero/tree/main/sdk"
+  },
+  "examples": [
+    {
+      "description": "Create a bond for trading agent",
+      "code": "const client = new AgberoClient(provider);\nawait client.createBond({\n  bondId: 'trade-001',\n  agent: new PublicKey('...'),\n  taskDescription: 'Execute arbitrage strategy',\n  collateralAmount: new BN(1000000000),\n  deadline: new BN(Date.now() / 1000 + 86400)\n});"
+    }
+  ],
+  "tags": ["defi", "security", "escrow", "agents", "bonds"],
+  "documentation": "https://github.com/agbero-sol/agbero/blob/main/README.md"
+}
