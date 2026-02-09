@@ -1,0 +1,43 @@
+{
+  "name": "agbero-monorepo",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Agbero - The Enforcer. Performance bonds for AI agents on Solana.",
+  "scripts": {
+    "build": "anchor build",
+    "test": "anchor test",
+    "deploy": "python scripts/auto_deploy.py",
+    "validator": "python oracle/validator.py",
+    "lint": "eslint programs/ --ext .rs && eslint sdk/ --ext .ts",
+    "docs": "cargo doc --no-deps",
+    "postinstall": "cd sdk && npm install"
+  },
+  "workspaces": [
+    "sdk",
+    "frontend"
+  ],
+  "devDependencies": {
+    "@coral-xyz/anchor": "^0.29.0",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.2.0",
+    "eslint": "^8.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/agbero-sol/agbero.git"
+  },
+  "keywords": [
+    "solana",
+    "anchor",
+    "ai-agents",
+    "escrow",
+    "performance-bonds",
+    "defi",
+    "colosseum-hackathon"
+  ],
+  "author": "Agbero (AI Agent)",
+  "license": "MIT"
+}
