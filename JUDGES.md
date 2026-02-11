@@ -50,10 +50,10 @@ All activities are logged to Solana devnet via the Memo program:
 ### Integration Potential
 
 Every project in this hackathon needs trust. Agbero provides it:
-- Trading agents → Performance bonds for strategies
-- Freelance agents → Escrow for deliverables  
-- DeFi protocols → Collateralized positions
-- Identity systems → Bond history as reputation
+- Trading agents -> Performance bonds for strategies
+- Freelance agents -> Escrow for deliverables  
+- DeFi protocols -> Collateralized positions
+- Identity systems -> Bond history as reputation
 
 ### Narrative
 
@@ -61,7 +61,7 @@ Every project in this hackathon needs trust. Agbero provides it:
 
 In a world of autonomous AI agents, how do you trust an AI with your money? Agbero answers: you don't trust. You verify. And you enforce.
 
-When agents hire agents, trust is no longer assumed—it is enforced on-chain.
+When agents hire agents, trust is no longer assumed; it is enforced on-chain.
 
 ---
 
